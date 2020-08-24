@@ -1,0 +1,77 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- user_chose_events
+- user_wants_to_see_cities
+- user_does_not_want_to_book
+- user_chose_events_items
+- user_wants_to_book_ticket
+- user_choose_no_of_ticket
+- user_email
+responses:
+  utter_greet:
+  - buttons:
+    - payload: Yes I would like to see the cities
+      title: Yes
+    - payload: No need
+      title: No
+    text: Hey! you want to book ticket of the events which are in your city?
+  utter_display_cities:
+  - buttons:
+    - payload: show me the events of Delhi
+      title: Delhi
+    - payload: show me the events of Mumbai
+      title: Mumbai
+    text: Please select/type the city name
+  utter_proceed_booking:
+  - buttons:
+    - payload: Yes I would like to book the ticket
+      title: Yes
+    - payload: No need
+      title: No
+    text: procced for booking?
+  utter_no_of_ticket:
+  - buttons:
+    - payload: One ticket
+      title: One
+    - payload: Two ticket
+      title: Two
+    - payload: Four ticket
+      title: Four
+    - payload: Six ticket
+      title: Six
+    text: Please select/type the number of ticket
+  utter_thanking_message:
+  - text: Absolutely okay no issues buddy! Call me whenever you would like to order
+  - text: Well, it's your wish! But do let me know if you would like to order sometime
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_iamabot
+- display_event_menu
+- utter_display_cities
+- utter_thanking_message
+- order_received_from_user
+- utter_proceed_booking
+- utter_no_of_ticket
+- final_order_from_user
+- confirmation_to_user
